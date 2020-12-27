@@ -20,9 +20,6 @@ def check(unknown):
         unknown_face_encoding = face_recognition.face_encodings(unknown_picture)[0]
         results = face_recognition.compare_faces([my_face_encoding], unknown_face_encoding)
         if results[0] == True:
-           # print("###################")
-            #print("It's: " + unknown)
-            #print("###################")
             print("It's Max")
             value = 100
 
@@ -52,10 +49,6 @@ def check(unknown):
         except sbc.ScreenBrightnessError as error:
             print(error)
         pass
-#datei = os.listdir("C:\\Users\\maxfi\\Desktop\\Pics\\")
-#for file in datei:
-#    check(file)
-
 
 def camera():
     cap = cv2.VideoCapture(0)
@@ -85,11 +78,6 @@ def camera():
             os.remove("C:\\Users\\maxfi\\Desktop\\Face Recognition\\Pics\\" + "frame%d.jpg" % count)
             count = count + 1
 
-    # Paint frame
-
-    # cv2.rectangle(cv2.imshow('frame',gray), (0,0),(511,511),(255,0,0),5)
-
-    # When everything done, release the capture
     cap.release()
     cv2.destroyAllWindows()
 camera()
